@@ -19,11 +19,11 @@ const generateData = async (req, res) => {
         await Promise.all([...mockingUsers.map((user) => usersService.create(user)), ...mockingPets.map((pet) => petsService.create(pet))]);
         res.send({
             status: "success",
-            message: "Elementos cargados correctamente en la Base de Datos",
+            message: "Los datos se han generado y cargado correctamente en la Base de Datos",
         });
     } catch (error) {
         console.log(error);
-        res.status(500).send("Error al cargar los datos en la base de datos");
+        res.status(500).send("Error al generar y cargar los datos.!!!");
     }
 };
 

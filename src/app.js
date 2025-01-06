@@ -1,17 +1,20 @@
 import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import "./database.js";
+
+mongoose.set("strictQuery", false);
+
+// Rutas:
 import mocksRouter from "./routes/mocks.router.js";
 import usersRouter from "./routes/users.router.js";
 import petsRouter from "./routes/pets.router.js";
 import adoptionsRouter from "./routes/adoption.router.js";
 import sessionsRouter from "./routes/sessions.router.js";
-
-mongoose.set("strictQuery", false);
+import config from "./config/config.js";
 
 const app = express();
-const PORT = process.env.PORT||8080;
-const connection = mongoose.connect(`mongodb+srv://micaelgoitea:coderhouse2024@cluster0.2pk1l.mongodb.net/adoptame?retryWrites=true&w=majority&appName=Cluster0`)
+const PORT = config.app.PORT;
 
 app.use(express.json());
 app.use(cookieParser());

@@ -25,9 +25,10 @@ class MockingService {
                 specie: faker.animal.type(),
                 adopted: false,
                 birthDate: faker.date.past(),
-                image: "https://placedog.net/300/200",
+                image: "https://via.placeholder.com/150",
             });
         }
+        console.log(pets);
         return pets;
     }
 }
