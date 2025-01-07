@@ -1,7 +1,8 @@
+/** @format */
+
 import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-import "./database.js";
 
 mongoose.set("strictQuery", false);
 
@@ -15,6 +16,9 @@ import config from "./config/config.js";
 
 const app = express();
 const PORT = config.app.PORT;
+const CONNECTION_STRING = config.mongo.URL;
+
+mongoose.connect(CONNECTION_STRING);
 
 app.use(express.json());
 app.use(cookieParser());

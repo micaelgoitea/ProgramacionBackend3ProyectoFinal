@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 import { config } from "dotenv";
 
-// Cargar variables de entorno
 config();
 
-// Conexión a MongoDB
 const CONNECTION_STRING = process.env.MONGO_URL || "mongodb://localhost:27017/defaultdb";
 
 mongoose
